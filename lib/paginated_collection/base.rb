@@ -11,5 +11,10 @@ module PaginatedCollection
 
       super members
     end
+
+    def self.build_with(elems, pagination: {}, &block)
+      members = elems.map { |e| block.call(e) }
+      self.new(members, pagination)
+    end
   end
 end
