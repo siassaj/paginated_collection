@@ -14,7 +14,7 @@ module PaginatedCollection
 
     def self.build_with(elems, pagination: {}, &block)
       members = elems.map { |e| block.call(e) }
-      self.new(members, pagination)
+      self.new(members, pagination: pagination)
     end
   end
 end
