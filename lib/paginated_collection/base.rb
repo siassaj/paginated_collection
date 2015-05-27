@@ -7,7 +7,8 @@ module PaginatedCollection
       p = pagination.symbolize_keys
       @pagination = Pagination.new(p[:current_page],
                                    p[:total_pages],
-                                   p[:per_page])
+                                   p[:per_page],
+                                   p[:total])
 
       super members
     end
